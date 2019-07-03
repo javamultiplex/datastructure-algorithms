@@ -1,10 +1,14 @@
 package com.javamultiplex.linkedlist;
 
+
+/**
+ * @author Rohit Agarwal on 2019-07-03
+ */
 public class LinkedList {
 
     private Node head;
 
-    class Node {
+    private class Node {
         int value;
         Node next;
 
@@ -13,6 +17,30 @@ public class LinkedList {
             this.next = null;
         }
 
+    }
+
+    public void insertStart(int value) {
+        Node node = new Node(value);
+        if (isEmpty()) {
+            head = node;
+        } else {
+            node.next = head;
+            head = node;
+        }
+    }
+
+    public void insertAtMiddle(int position, int value) {
+        Node node = new Node(value);
+        Node temp1 = head;
+        Node temp2 = null;
+        int count = 0;
+        while (count < position) {
+            temp2 = temp1;
+            temp1 = temp1.next;
+            count++;
+        }
+        temp2.next = node;
+        node.next = temp1;
     }
 
     public void insertEnd(int value) {
@@ -29,14 +57,23 @@ public class LinkedList {
         }
     }
 
-    public void insertStart(int value) {
-        Node node = new Node(value);
+    public void deleteStart() {
         if (isEmpty()) {
-            head = node;
+            System.out.println("List is empty.");
         } else {
-            node.next = head;
-            head = node;
+            head = head.next;
         }
+    }
+
+    private void deleteMiddle(int position){
+        Node temp1=null,temp2=head;
+        int count=0;
+        while(count<position){
+            temp1=temp2;
+            temp2=temp2.next;
+            count++;
+        }
+        temp1.next=temp2.next;
     }
 
     public void deleteEnd() {
@@ -54,13 +91,7 @@ public class LinkedList {
 
     }
 
-    public void deleteStart() {
-        if (isEmpty()) {
-            System.out.println("List is empty.");
-        } else {
-            head = head.next;
-        }
-    }
+
 
     public int size() {
         int count = 0;
@@ -72,7 +103,7 @@ public class LinkedList {
         return count;
     }
 
-    //LinkedList starts from 0.
+
     public void insertAt(int position, int value) {
         if (position == 0) {
             insertStart(value);
@@ -86,18 +117,20 @@ public class LinkedList {
 
     }
 
-    public void insertAtMiddle(int position, int value) {
-        Node node = new Node(value);
-        Node temp1 = head;
-        Node temp2 = null;
-        int count = 0;
-        while (count < position) {
-            temp2 = temp1;
-            temp1 = temp1.next;
-            count++;
+    public void deleteAt(int position){
+        if(position==0){
+            deleteStart();
+        }else if(position==size()-1){
+            deleteEnd();
+        }else if(position>0&&position<size()-1){
+            deleteMiddle(position);
+        }else{
+            System.out.println("Invalid position");
         }
-        temp2.next = node;
-        node.next = temp1;
+    }
+
+    public void clear(){
+        head=null;
     }
 
     public boolean isEmpty() {

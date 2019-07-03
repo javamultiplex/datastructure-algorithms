@@ -55,4 +55,45 @@ public class LinkedListTest {
         linkedList.insertAt(3,66);
         linkedList.traverse();
     }
+
+    @Test
+    public void deleteAtSpecificPosition(){
+        linkedList.insertAt(0, 7);
+        linkedList.insertAt(0, 9);
+        linkedList.insertAt(2, 8);
+        linkedList.insertAt(3, 80);
+        linkedList.insertAt(2, 6);
+        linkedList.insertAt(3,66);
+        linkedList.traverse();
+        linkedList.deleteAt(0);
+        System.out.println();
+        linkedList.traverse();
+        linkedList.deleteAt(2);
+        System.out.println();
+        linkedList.traverse();
+        linkedList.deleteAt(linkedList.size()-1);
+        System.out.println();
+        linkedList.traverse();
+        linkedList.deleteAt(1);
+        System.out.println();
+        linkedList.traverse();
+        linkedList.deleteAt(1);
+        System.out.println();
+        linkedList.traverse();
+    }
+
+    @Test
+    public void shouldClearLinkedList(){
+        linkedList.insertAt(0, 7);
+        linkedList.insertAt(0, 9);
+        linkedList.insertAt(2, 8);
+        linkedList.insertAt(3, 80);
+        linkedList.insertAt(2, 6);
+        linkedList.insertAt(3,66);
+        linkedList.traverse();
+        linkedList.clear();
+        System.out.println("\nAfter clearing linkedList");
+        linkedList.traverse();
+    }
+
 }
