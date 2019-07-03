@@ -20,6 +20,10 @@ public class DoubleLinkedList {
 
     }
 
+    /**
+     *
+     * @param value
+     */
     public void insertEnd(int value){
         Node node=new Node(value);
         if(isEmpty()){
@@ -34,7 +38,10 @@ public class DoubleLinkedList {
         }
     }
 
-
+    /**
+     *
+     * @param value
+     */
     public void insertStart(int value){
         Node node=new Node(value);
         if(isEmpty()){
@@ -46,6 +53,11 @@ public class DoubleLinkedList {
         }
     }
 
+    /**
+     *
+     * @param position
+     * @param value
+     */
     public void insertMiddle(int position, int value){
         Node temp1=null, temp2=head;
         Node node=new Node(value);
@@ -62,6 +74,11 @@ public class DoubleLinkedList {
 
     }
 
+    /**
+     *
+     * @param position
+     * @param value
+     */
     public void insertAt(int position, int value){
         if(position==0){
             insertStart(value);
@@ -73,6 +90,7 @@ public class DoubleLinkedList {
             System.out.println("Invalid position.");
         }
     }
+
 
 
     public void clear(){
@@ -104,6 +122,10 @@ public class DoubleLinkedList {
       }
     }
 
+    /**
+     *
+     * @param position
+     */
     private void deleteMiddle(int position){
         int count=0;
         Node temp1=null,temp2=head;
@@ -117,6 +139,10 @@ public class DoubleLinkedList {
 
     }
 
+    /**
+     *
+     * @param position
+     */
     public void deleteAt(int position){
         if(position==0){
             deleteStart();

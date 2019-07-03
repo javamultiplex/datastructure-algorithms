@@ -4,7 +4,7 @@ package com.javamultiplex.linkedlist;
 /**
  * @author Rohit Agarwal on 2019-07-03
  */
-public class LinkedList {
+public class SingleLinkedList {
 
     private Node head;
 
@@ -19,6 +19,10 @@ public class LinkedList {
 
     }
 
+    /**
+     *
+     * @param value
+     */
     public void insertStart(int value) {
         Node node = new Node(value);
         if (isEmpty()) {
@@ -29,6 +33,11 @@ public class LinkedList {
         }
     }
 
+    /**
+     *
+     * @param position
+     * @param value
+     */
     public void insertAtMiddle(int position, int value) {
         Node node = new Node(value);
         Node temp1 = head;
@@ -43,6 +52,10 @@ public class LinkedList {
         node.next = temp1;
     }
 
+    /**
+     *
+     * @param value
+     */
     public void insertEnd(int value) {
         Node node = new Node(value);
         if (isEmpty()) {
@@ -65,6 +78,10 @@ public class LinkedList {
         }
     }
 
+    /**
+     *
+     * @param position
+     */
     private void deleteMiddle(int position){
         Node temp1=null,temp2=head;
         int count=0;
@@ -104,6 +121,11 @@ public class LinkedList {
     }
 
 
+    /**
+     *
+     * @param position
+     * @param value
+     */
     public void insertAt(int position, int value) {
         if (position == 0) {
             insertStart(value);
@@ -117,6 +139,10 @@ public class LinkedList {
 
     }
 
+    /**
+     *
+     * @param position
+     */
     public void deleteAt(int position){
         if(position==0){
             deleteStart();
