@@ -1,5 +1,6 @@
 package com.javamultiplex.linkedlist;
 
+import com.javamultiplex.linkedlist.SingleLinkedList;
 import org.junit.Before;
 import org.junit.Test;
 
