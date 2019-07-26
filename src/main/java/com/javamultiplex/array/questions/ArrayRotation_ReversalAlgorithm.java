@@ -1,4 +1,4 @@
-package com.javamultiplex.array;
+package com.javamultiplex.array.questions;
 
 import java.util.Arrays;
 
