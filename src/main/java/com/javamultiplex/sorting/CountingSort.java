@@ -17,10 +17,7 @@ public class CountingSort {
 
         int[] sorted = new int[n];
 
-        //O(K)
-        for (int i = 0; i <= k; i++) {
-            count[i] = 0;
-        }
+        Arrays.fill(count,0);
 
         //O(N)
         for (int i = 0; i < n; i++) {
@@ -37,10 +34,7 @@ public class CountingSort {
             sorted[--count[arr[i]]]=arr[i];
         }
 
-        //O(N)
-        for (int i=0;i<n;i++){
-            arr[i]=sorted[i];
-        }
+        System.arraycopy(sorted,0,arr,0,n);
 
     }
 
