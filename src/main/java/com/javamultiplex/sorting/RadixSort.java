@@ -10,8 +10,9 @@ import java.util.Arrays;
  * b=base, for binary numbers b=2, for decimal numbers b=10 etc
  * Space Complexity - O(b)
  */
-public class RadixSort {
-    private static void sort(int[] arr, int n) {
+public class RadixSort implements Sort {
+    @Override
+    public void sort(int[] arr, int n) {
         int max = getMax(arr, n);
 
         for (int place = 1; max / place > 0; place *= 10) {
@@ -54,7 +55,8 @@ public class RadixSort {
         int n = arr.length;
         System.out.println("Before Sorting");
         System.out.println(Arrays.toString(arr));
-        sort(arr, n);
+        RadixSort radixSort = new RadixSort();
+        radixSort.sort(arr, n);
         System.out.println("After Sorting");
         System.out.println(Arrays.toString(arr));
     }

@@ -4,14 +4,15 @@ import java.util.Arrays;
 
 /**
  * @author Rohit Agarwal on 2019-10-04
- *
+ * <p>
  * Worst case time complexity - O(N^2)
  * Best case time complexity - O(N)
  * Space complexity - O(1)
  */
-public class InsertionSort {
+public class InsertionSort implements Sort {
 
-    private static void sort(int[] arr, int n) {
+    @Override
+    public void sort(int[] arr, int n) {
         for (int i = 1; i < n; i++) {
             int key = arr[i];
             int j = i - 1;
@@ -28,7 +29,8 @@ public class InsertionSort {
         int n = arr.length;
         System.out.println("Before sorting ...");
         System.out.println(Arrays.toString(arr));
-        sort(arr,n);
+        InsertionSort insertionSort = new InsertionSort();
+        insertionSort.sort(arr, n);
         System.out.println("After sorting ...");
         System.out.println(Arrays.toString(arr));
     }

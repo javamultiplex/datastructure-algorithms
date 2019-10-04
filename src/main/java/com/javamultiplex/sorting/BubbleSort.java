@@ -8,9 +8,10 @@ import java.util.Arrays;
  * Time complexity -> Worst Case = O(n^2), Best Case = O(k*n)
  * where k is number of iterations
  */
-public class BubbleSort {
+public class BubbleSort implements Sort {
 
-    private static void sort(int[] arr, int n) {
+    @Override
+    public void sort(int[] arr, int n) {
         int swapped;
         for (int i = 0; i < n; i++) {
             swapped = 0;
@@ -35,7 +36,8 @@ public class BubbleSort {
     public static void main(String[] args) {
         int[] arr = {10, 20, 30, 50, 40};
         int n = 5;
-        sort(arr, n);
+        BubbleSort bubbleSort=new BubbleSort();
+        bubbleSort.sort(arr, n);
         System.out.println(Arrays.toString(arr));
     }
 }
